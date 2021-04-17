@@ -7,6 +7,8 @@ const app = express();
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 app.use(express.urlencoded());
+app.use(express.static("assets"));
+
 
 var contactList = [
   {
@@ -24,6 +26,7 @@ var contactList = [
 ];
 
 app.get("/", function (req, res) {
+  // console.log("from the get method ", req.myName);
   return res.render("home", {
     title: "Contact List!",
     contact_list: contactList,
