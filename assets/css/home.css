@@ -22,13 +22,16 @@ body {
   justify-content: space-between;
   padding: 0 5px 0 5px;
   margin-right: 40px;
+  cursor: pointer;
+}
+#display-contacts div:hover {
+  background-color: gray;
 }
 #display-contacts h3 {
   display: inline;
+  text-transform: capitalize;
 }
-#display-contacts p {
-  display: inline;
-}
+
 button {
   width: auto;
   background: gray;
