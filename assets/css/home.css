@@ -1,44 +1,69 @@
 body {
   margin: 0;
   font-family: sans-serif;
-  text-align: center;
+  box-sizing: border-box;
 }
 #page-heading {
   text-align: center;
   margin-top: 25px;
   color: gray;
 }
+
 #display-contacts {
   display: flex;
   justify-content: center;
 }
 
-#display-contacts div {
-  width: 350px;
-  background-color: cornflowerblue;
+#display-contacts ul {
+  list-style: none;
+  padding: 0;
+}
+.contact {
+  padding: 3px 10px;
+  border: 1px solid white;
+  background-color: #6f92f9;
+  box-shadow: 1px 1px 1px 1px lightgray;
   color: white;
-  margin-bottom: 1px;
   display: flex;
-  justify-content: space-between;
-  padding: 0 5px 0 5px;
-  margin-right: 40px;
+  width: 380px;
+}
+.contact:hover {
+  background-color: gray;
   cursor: pointer;
 }
-#display-contacts div:hover {
-  background-color: gray;
+
+.contact .details {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 90%;
 }
-#display-contacts h3 {
-  display: inline;
+.contact .delete-button {
+  width: 10%;
+  margin-top: 5px;
+  text-align: center;
+}
+
+.contact .delete-button a {
+  color: white;
+  background-color: red;
+}
+
+.contact p {
+  margin: 5px 0;
+}
+.details {
   text-transform: capitalize;
 }
 
-button {
-  width: auto;
+#new-contact-form {
+  text-align: center;
+}
+#new-contact-form input {
+  background: white;
+}
+#new-contact-form button {
   background: gray;
   color: white;
-}
-input {
-  width: 155px;
-  background: white;
-  padding: revert;
 }

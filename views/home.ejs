@@ -19,15 +19,23 @@
     <div id="display-contacts">
       <ul>
         <% for(let i of contact_list) { %>
-        <div>
-          <h3><%= i.name%></h3>
-          <h3><%= i.phone%></h3>
-        </div>
+        <li class="contact">
+          <div class="details">
+            <p><%= i.name%></p>
+            <p><%= i.phone%></p>
+          </div>
+
+          <div class="delete-button">
+            <a href="/delete-contact/?phone=<%= i.phone%>">
+              <i class="fas fa-window-close"></i>
+            </a>
+          </div>
+        </li>
         <% } %>
       </ul>
     </div>
 
-    <form action="/create-contact" method="POST">
+    <form id="new-contact-form" action="/create-contact" method="POST">
       <input type="text" name="name" placeholder="Name" required />
 
       <input type="number" name="phone" placeholder="Phone" required />

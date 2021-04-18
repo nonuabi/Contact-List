@@ -9,7 +9,6 @@ app.set("views", path.join(__dirname, "views"));
 app.use(express.urlencoded());
 app.use(express.static("assets"));
 
-
 var contactList = [
   {
     name: "Abhishek",
@@ -26,7 +25,6 @@ var contactList = [
 ];
 
 app.get("/", function (req, res) {
-  // console.log("from the get method ", req.myName);
   return res.render("home", {
     title: "Contact List!",
     contact_list: contactList,
@@ -49,6 +47,19 @@ app.post("/create-contact", function (req, res) {
   return res.redirect("back");
 });
 
+//for deleting a contact
+app.get("/delete-contact", function (req, res) {
+  //get the query from the url
+  let phone = req.query.phone;
+
+  let contactIndex = contactList.findIndex((contact) => contact.phone == phone);
+
+  if (contactIndex != -1) {
+    contactList.splice(contactIndex, 1);
+  }
+  return res.redirect("back");
+});
+
 app.listen(port, function (err) {
   if (err) {
     console.log("error in running the server ", err);
@@ -56,4 +67,3 @@ app.listen(port, function (err) {
   }
   console.log("Yup! My Express Server is running on Port: ", port);
 });
-  
