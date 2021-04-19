@@ -5,5 +5,5 @@ Home page view
 ~~~
 
 ~~~
-![]assets/images/contact list pic.JPG
+![]assets/images/contact_list_pic.JPG
 ~~~
