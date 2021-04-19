@@ -3,6 +3,7 @@ const path = require("path");
 const port = 8000;
 
 const db = require("./confg/monogoose");
+const Contact = require('./models/contact');
 
 const app = express();
 
