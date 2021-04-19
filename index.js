@@ -12,21 +12,6 @@ app.set("views", path.join(__dirname, "views"));
 app.use(express.urlencoded());
 app.use(express.static("assets"));
 
-var contactList = [
-  {
-    name: "Abhishek",
-    phone: "1111111111",
-  },
-  {
-    name: "Tony Stark",
-    phone: "2222222222",
-  },
-  {
-    name: "deepak",
-    phone: "3333333333",
-  },
-];
-
 app.get("/", function (req, res) {
   //fetch the data
   Contact.find({}, function (err, contacts) {
@@ -48,13 +33,6 @@ app.get("/practice", function (req, res) {
 });
 
 app.post("/create-contact", function (req, res) {
-  // contactList.push({
-  //   name: req.body.name,
-  //   phone: req.body.phone,
-  // });
-
-  // contactList.push(req.body);
-
   Contact.create(
     {
       name: req.body.name,
@@ -75,7 +53,6 @@ app.post("/create-contact", function (req, res) {
 app.get("/delete-contact", function (req, res) {
   //get the id from query in the url
   let id = req.query.id;
-
   //find the contact in the database using id and delete it
   Contact.findByIdAndDelete(id, function (err) {
     if (err) {
