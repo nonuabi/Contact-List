@@ -28,9 +28,16 @@ var contactList = [
 ];
 
 app.get("/", function (req, res) {
-  return res.render("home", {
-    title: "Contact List!",
-    contact_list: contactList,
+  //fetch the data
+  Contact.find({}, function (err, contacts) {
+    if (err) {
+      console.log("Error in fetching contacts from db");
+      return;
+    }
+    return res.render("home", {
+      title: "Contacts List",
+      contact_list: contacts,
+    });
   });
 });
 
