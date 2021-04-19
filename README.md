@@ -2,6 +2,8 @@
 
 ~~~
 Home page view 
+~~~
 
-![]assets\images\contact list pic.JPG
+~~~
+![]assets/images/contact list pic.JPG
 ~~~
