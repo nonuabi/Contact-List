@@ -21,14 +21,14 @@ app.get("/", function (req, res) {
     }
     return res.render("home", {
       title: "Contacts List",
-      contact_list: contacts,
+      contact_list: contacts
     });
   });
 });
 
 app.get("/practice", function (req, res) {
   return res.render("practice", {
-    title: "Let us play with ejs",
+    title: "Let us play with ejs"
   });
 });
 
