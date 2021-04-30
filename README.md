@@ -1,7 +1,7 @@
 # Contact-List
 
-~~~
-Home page view 
-~~~
-![](assets/images/contact%20list%20pic.JPG)
+```
+Home page view
+```
 
+![](assets/images/2.JPG)
